@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>App</title>
+        <link rel="stylesheet" type="text/css" href="app.css">
+        <script src="app.js">
+            function playAudio() {
+                document.getElementById('audio').play();
+            }
+            function pauseAudio() {
+                document.getElementById('audio').pause();
+            }
+            function stopAudio() {
+                var audio = document.getElementById('audio');
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        </script>
+        <style>
+            body {
+                background-color: #181818;
+                font-family: 'Monaco', monospace;
+            }
+            .player {
+                width: 300px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .controls {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+            button {
+                padding: 10px 20px;
+                margin: 0 10px;
+                font-size: 16px;
+                color: #fff;
+                background-color: #007bff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #0056b3;
+            }
+            </style>
+    </head>
+    <body>
+        <div class="player">
+            <audio id="audio" controls>
+                <source src="your-song.mp3" type="audio/mp3">
+            </audio>
+           <div class="controls">
+                <button onclick="playAudio()">Play</button>
+                <button onclick="pauseAudio">Pause</button>
+                <button onclick="stopAudio">Stop</button>
+            </div>
+        </div>
+    </body>
+</html>
